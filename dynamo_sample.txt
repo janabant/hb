@@ -1,0 +1,62 @@
+import boto.dynamodb2
+from boto.dynamodb2.table import Table
+from boto.dynamodb2.types import NUMBER, STRING, STRING_SET
+from boto.dynamodb2.fields import HashKey,RangeKey,AllIndex
+
+
+#print conn.list_tables()
+
+#print conn.put_item("movie_data")
+# print table_mdata
+
+
+# mtable=Table.create("movie_data",schema=[
+#                  HashKey("moviename",data_type=STRING),
+#                      RangeKey("releaseyear",data_type=NUMBER),
+#                      ],
+#              throughput={"read":1,"write":1},
+#              connection=conn
+# )
+
+# mtable=Table.create("movie_data",schema=[
+#                  HashKey("movie_name",data_type=STRING),
+#                      RangeKey("release_year",data_type=NUMBER),
+#                      ], indexes=[
+#         AllIndex("cast_index",parts=[HashKey("movie_name",data_type=STRING),
+#                      RangeKey("banner",data_type=STRING),
+#                      ])
+#         ],
+#              throughput={"read":1,"write":1},
+#              connection=conn
+# )
+
+#print conn.describe_table("movie_data")
+#mtable.__setattr__("cast",None)
+
+
+# mdata={
+#     'movie_name':'baktha-prahladha',
+#     'release_year':1931,
+#     'screenplay': {'surabhi nataka'},
+#     'story': {'surabhi nataka'},
+#     'supporting cast': {'b a subba rao (i)', 'darasami naidu', 'chitrapu narasimha rao', 'b l v prasad', 'master kishore'},
+#     'dialogues': {'kanakaratna movies pvt ltd'},
+#     'producer': {'ardhishir m iran'},
+#     'lyricist': {'gordhanbhai patel'},
+#     'director': {'h m reddy'},
+#     'cast': {'munipalle subbaiah', 'l v prasad', 'surabhi kamalabhai'},
+#     'cinematographer': {'govardhanabai patel'},
+#     'music': {'h r  padmanabha sastry'},
+#     'banner': {'bharat movietone', 'imperial'}
+# }
+#mtable.put_item(mdata)
+#print type(mdata)
+
+
+# for item in mtable.get_item(moviename='alu-magalu', releaseyear=1957):
+#     print item
+# for item in mtable.scan():
+#     print item['moviename']
+#     print item['releaseyear']
+
+#print mtable.delete_item(movie_name='baktha-prahladha', release_year=1931)
